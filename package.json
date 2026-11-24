@@ -1,0 +1,1 @@
+{"name":"mergefolio","version":"1.0.0","private":true,"type":"module","license":"UNLICENSED","scripts":{"build":"vite build --base=./","dev":"vite","test":"python -m unittest discover -s tests"},"dependencies":{"genlayer-js":"2.0.0","viem":"2.58.6"},"devDependencies":{"vite":"7.3.8"}}

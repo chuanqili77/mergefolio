@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#132026"><title>Mergefolio — public contribution credentials</title></head>
+<body>
+<header><a href="./" class="wordmark"><span aria-hidden="true">✳</span> Mergefolio</a><button id="wallet-toggle" aria-controls="wallet-panel" aria-expanded="false">Connect Wallet</button></header>
+<main>
+ <section class="masthead">
+  <div><p class="eyebrow">OPEN SOURCE CONTRIBUTION RECORD</p><h1>Work with<br>a <em>paper trail.</em></h1><p>Independent GenLayer validators turn publicly merged pull requests into credentials under the credited GitHub account.</p><a href="#nominate" class="jump">Verify a pull request ↓</a></div>
+  <div class="folio-card"><div class="stamp">MERGE<br>CHECK</div><p>THE ISSUANCE RULE</p><ol><li>Read the public pull request.</li><li>Check who authored and merged it.</li><li>Issue only for a third-party merge.</li></ol></div>
+ </section>
+ <aside id="wallet-panel" hidden>
+  <h2>Wallet</h2>
+  <div class="controls"><button data-wallet="MetaMask">MetaMask</button><button data-wallet="OKX Wallet">OKX Wallet</button><button id="demo">Create Demo / Test Wallet</button><select id="demo-list" aria-label="Switch Demo wallet" hidden></select><button id="switch" hidden>Switch to Studionet</button><button id="fund" hidden>Request test GEN</button><button id="disconnect">Disconnect</button><button id="reset">Reset Demo wallets</button></div>
+  <p id="identity">No wallet connected.</p>
+ </aside>
+ <section class="portfolio" aria-labelledby="ledger-title">
+  <div class="chapter"><div><p class="eyebrow">PUBLIC LEDGER</p><h2 id="ledger-title">Contribution folios</h2></div><button id="reload">Refresh</button></div>
+  <div class="tabs"><form id="lookup"><label>GitHub numeric account ID<input id="author-id" name="author" inputmode="numeric" pattern="[1-9][0-9]{0,19}" required></label><button>Find folio</button></form><button id="show-ledger">Latest decisions</button></div>
+  <div id="profile"></div><div id="records"><p>Reading finalized records…</p></div>
+ </section>
+ <section class="intake" id="nominate">
+  <div><p class="eyebrow">NOMINATION DESK</p><h2>Check a merge</h2><p>Anyone can nominate. Credentials always go to the author reported by GitHub.</p></div>
+  <form id="nomination"><label>Public GitHub pull request URL<input name="pull" placeholder="https://github.com/owner/repo/pull/123" required type="url"></label><button id="verify">Sign and verify</button><p id="eligibility"></p></form>
+ </section>
+ <section id="status" aria-live="polite"><p id="message">Browsing finalized state.</p><a id="tx" target="_blank" rel="noopener" hidden>Transaction in Explorer ↗</a></section>
+ <footer><span>Stable Studionet · 61999</span><a id="contract">Contract source and state ↗</a></footer>
+</main><script type="module" src="/app.js"></script></body></html>
