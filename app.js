@@ -170,10 +170,10 @@ function link(text, url, parent) {
   anchor.rel = 'noopener';
   return anchor;
 }
-let example = {};
-fetch(new URL('./evidence-index.json', location.href)).then(response => response.ok ? response.json() : {}).then(index => { example = index; }).catch(() => {});
+const evidenceIndex = fetch(new URL('./evidence-index.json', location.href))
+  .then(response => response.ok ? response.json() : {}).catch(() => ({}));
 const sessionReceipts = new Map();
-function renderRecord(id, record) {
+function renderRecord(id, record, example) {
   const details = node('details', '', $('records'));
   details.className = 'record';
   const heading = node('summary', '#' + id + ' · ' + record.repository + ' #' + record.number, details);
@@ -208,6 +208,7 @@ async function refresh() {
     if (!raw) throw new Error('Missing finalized record');
     return [id, JSON.parse(raw)];
   }));
+  const example = await evidenceIndex;
   if (version !== refreshVersion) return;
   $('profile').replaceChildren();
   $('records').replaceChildren();
@@ -222,7 +223,7 @@ async function refresh() {
     permalink.href = '?author=' + selected;
   }
   if (!rows.length) node('p', 'No records in this view.', $('records'));
-  for (const [id, record] of rows) renderRecord(id, record);
+  for (const [id, record] of rows) renderRecord(id, record, example);
   if (remaining > 8) node('button', 'Older decisions', $('records')).onclick = () => browse(selected, currentOffset + 8);
   if (currentOffset) node('button', 'Newer decisions', $('records')).onclick = () => browse(selected, Math.max(0, currentOffset - 8));
   readFailed = false;
@@ -235,7 +236,11 @@ async function browse(id = '', page = 0) {
     await refresh();
     if ($('message').textContent.startsWith('Finalized state could not be read')) message('Browsing finalized state.');
   }
-  catch { message('Finalized state could not be read. Use Refresh to try again.'); }
+  catch {
+    readFailed = true;
+    permissions();
+    message('Finalized state could not be read. Use Refresh to try again.');
+  }
 }
 $('lookup').onsubmit = event => { event.preventDefault(); void browse($('author-id').value); };
 $('show-ledger').onclick = () => browse();

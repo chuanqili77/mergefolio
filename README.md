@@ -4,7 +4,7 @@ Mergefolio is a public record of third-party merges for open-source contributors
 
 [Open Mergefolio](https://chuanqili77.github.io/mergefolio/)
 
-Independent GenLayer validators each fetch the public GitHub Pull Requests API and compare the normalized attribution and merge outcome using strict equality. An unrelated-to-the-author merger account permits issuance. Self-merges, open pull requests and closed unmerged requests remain explanatory ledger entries and do not add credit. A later status can be evaluated, but the same outcome cannot be recorded twice. Immutable GitHub pull IDs prevent aliases from duplicating an issued credential. Folios count distinct repository-owner accounts without rewarding repeated merges under the same owner as independent breadth.
+Independent GenLayer validators each fetch the public GitHub Pull Requests API and compare the normalized attribution and merge outcome using strict equality. A merger account with a different GitHub ID from the author permits issuance. Self-merges, open pull requests and closed unmerged requests remain explanatory ledger entries and do not add credit. A later status can be evaluated, but the same outcome cannot be recorded twice. Immutable GitHub pull IDs prevent aliases from duplicating an issued credential. Folios count distinct repository-owner accounts without rewarding repeated merges under the same owner as independent breadth.
 
 A credential records an observed GitHub event. It provides no claim about real-world identity, human independence, seniority, code quality, or control of a wallet. GitHub accounts may be automated or affiliated with one another. Private repositories are outside scope. API outages and validator disagreement fail closed.
 
