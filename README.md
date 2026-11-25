@@ -21,3 +21,9 @@ genvm-lint check contracts/mergefolio.py
 ```
 
 The frontend targets Stable Studionet, chain 61999. Standard EIP-1193 wallets connect through MetaMask or OKX. Demo wallets exist only in tab memory and can request test GEN from the Studio faucet. The public ledger and folios always read the latest-final chain state.
+
+## Verified example
+
+The [contributor folio](https://chuanqili77.github.io/mergefolio/?author=26024537) shows the credential for GitHub account ID 26024537. The same account's PR #259 was closed without a merge and did not receive credit. PR #262 was merged by a different account and added one credential. A duplicate submission was rejected. The [transaction receipts and latest-final state](evidence/studionet.json) are rechecked by running `node scripts/verify.mjs`. Deployment metadata and the official lint result are tracked alongside these records.
+
+[Desktop browser review](evidence/mergefolio-desktop.jpg) · [390 px browser review](evidence/mergefolio-narrow.jpg). Both simulated layouts had no horizontal overflow. A browser Demo wallet signed the test transactions. Native extensions and physical phones were outside this run.

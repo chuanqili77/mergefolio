@@ -1,0 +1,25 @@
+{
+  "finalCount": 2,
+  "transactions": [
+    {
+      "operation": "Closed unmerged",
+      "hash": "0x3bdd88556e09490c825d882b4633f6d61258009504d95aa1897d86a2784434f0",
+      "execution": "SUCCESS",
+      "signer": "0x9dE98d5F1A8584077F5FceB35A6eBA1978061ba5",
+      "credential": { "id": 1, "pr": 259, "authorId": 26024537, "result": "CLOSED_UNMERGED" }
+    },
+    {
+      "operation": "Third-party merge",
+      "hash": "0x4862032234a207f4a135ce1cb076c540d41970b6ca9b09e72b027945c835c3bb",
+      "execution": "SUCCESS",
+      "signer": "0x9dE98d5F1A8584077F5FceB35A6eBA1978061ba5",
+      "credential": { "id": 2, "pr": 262, "authorId": 26024537, "result": "ISSUED" }
+    },
+    {
+      "operation": "Duplicate issuance rejected",
+      "hash": "0x64f1599f15ec8d43ec289ce6ee05d3a4c44a19e15a069eb5247acb05b0f3bc74",
+      "execution": "ERROR",
+      "signer": "0x9dE98d5F1A8584077F5FceB35A6eBA1978061ba5"
+    }
+  ]
+}
